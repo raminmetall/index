@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini App</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            background-color: #0088cc;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>به مینی‌اپ ربات خوش آمدید!</h2>
+    <p>این یک نمونه از مینی اپلیکیشن تلگرام است.</p>
+    <button onclick="sendMessage()">ارسال پیام به ربات</button>
+
+    <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand(); // صفحه رو تمام‌صفحه کن
+
+        function sendMessage() {
+            tg.sendData("سلام، من از مینی‌اپ پیام می‌فرستم!"); 
+        }
+    </script>
+</body>
+</html>
