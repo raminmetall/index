@@ -6,33 +6,96 @@
     <title>Mini App</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Vazirmatn', sans-serif;
         }
+
+        body {
+            background: linear-gradient(135deg, #121212, #1e1e1e);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 20px;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            position: relative;
+            display: inline-block;
+        }
+
         button {
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-size: 18px;
             border: none;
-            background-color: #0088cc;
+            background: linear-gradient(90deg, #ff416c, #ff4b2b);
             color: white;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 30px;
+            box-shadow: 0 4px 10px rgba(255, 65, 108, 0.4);
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.5s;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+        }
+
+        button:active::after {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0;
+            transition: 0s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(255, 65, 108, 0.5);
         }
     </style>
 </head>
 <body>
-    <h2>سارا</h2>
-    <p>میدونی خیلی دوست دارم؟</p>
-    <button onclick="sendMessage()">اهم</button>
+    <h2>سارا ❤️</h2>
+    <p>می‌دونی چقدر دوستت دارم؟ 🥰</p>
+
+    <div class="button-container">
+        <button onclick="sendMessage()">اهم 🥺</button>
+    </div>
 
     <script>
         let tg = window.Telegram.WebApp;
-        tg.expand(); // صفحه رو تمام‌صفحه کن
+        tg.expand(); // تمام‌صفحه کردن مینی‌اپ
 
         function sendMessage() {
-            tg.sendData("سلام، من از مینی‌اپ پیام می‌فرستم!"); 
+            tg.sendData("سلام، من از مینی‌اپ پیام می‌فرستم! ❤️");
         }
     </script>
 </body>
